@@ -23,7 +23,9 @@ import the walletwave.sql file in the main folder.
 
 ## MANUAL SQL CONFIGURATIONS:
 
-```CREATE DATABASE walletwave;```
+```
+CREATE DATABASE walletwave;
+```
 
 ```
 CREATE TABLE users (
