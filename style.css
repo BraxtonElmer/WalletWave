@@ -1,0 +1,79 @@
+.navs{
+	background: #0e664e;
+	border-radius:10px;
+	border-width:0px;
+	color:white;
+	font-family: Calibri;
+	transition:0.3s;
+	font-size:18px;
+	width:90%;
+	height:30px;
+}
+.navs:hover{
+	cursor:pointer;
+	background: navy;
+	letter-spacing: 1.2px;
+}
+.entries{
+	width:300px;
+	height:40px;
+	border-radius:10px;
+	transition:0.3s;
+
+}
+.entries:hover{
+	border-color:#20ab43;
+
+}
+.proceed{
+	border-radius:10px;
+	transition:0.3s;
+	border-width:0.3px;
+
+
+}
+.proceed:hover{
+	cursor:pointer;
+	border-width:0px;
+	background: #32cc27;
+	color:white;
+}
+.deleteacc{
+	border-width:0px;
+	border-radius:50%;
+	background: red;
+	color:white;
+	transition:0.3s;
+}
+.deleteacc:hover{
+	cursor: pointer;
+}
+.see{
+	border-width:0.8px;
+	width:auto;
+	height:30px;
+	background: whitesmoke;
+	transition:0.3s;
+
+}
+.see:hover{
+	cursor: pointer;
+	background: blue;
+	color:white;
+	border-radius:8px;
+}
+.login{
+	background: navy;
+	color:white;
+	height:40px;
+	width:100px;
+	border-width:0px;
+	border-radius:10px;
+	letter-spacing:1.5px;
+	transition: 0.3s;
+}
+.login:hover{
+	box-shadow:inset 100px 0px 0px 0px #188b6c;
+
+	cursor: pointer;
+}
