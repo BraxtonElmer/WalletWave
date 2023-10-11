@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -72,16 +73,16 @@
 				<td style='width:40%;'>
 					<center>
 						<div style='width:100%;box-shadow:2px 2px 10px 0.08px;border-radius:20px;'>
-							<center><h1 style='color:#0e664e;'>Hi, <span id='name'>!name! </span></h1></center>
+							<center><h1 style='color:#0e664e;'>Hi, <span id='name'><?php echo $_SESSION["username"]; ?> </span></h1></center>
 							<br>
 							<center>
-								<h1 style='color:green;'>Income: Rs.<span id='inc'>!income!</span></h1>
+								<h1 style='color:green;'>Income: Rs.<span id='inc'><?php echo $_SESSION["income"]; ?></span></h1>
 							</center>
 							<center>
-								<h1 style='color:red;'>Expenses: Rs.<span id='inc'>!Expenses!</span></h1>
+								<h1 style='color:red;'>Expenses: Rs.<span id='inc'><?php echo $_SESSION["expense"]; ?></span></h1>
 							</center>
 							<center>
-								<h1 style='color:navy;'>Balance: Rs.<span id='inc'>!Balance!</span></h1>
+								<h1 style='color:navy;'>Balance: Rs.<span id='inc'><?php echo intval($_SESSION["income"]) - intval($_SESSION["expense"]); ?></span></h1>
 							</center>
 							<br>
 							<center>

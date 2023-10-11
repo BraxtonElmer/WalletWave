@@ -53,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $account_number = $_POST["account_number"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password
 
-    $sql = "INSERT INTO users (name, email, income_range, bank_name, account_number, password)
-            VALUES ('$name', '$email', '$income_range', '$bank_name', '$account_number', '$password')";
+	$sql = "INSERT INTO users (name, email, income_range, bank_name, account_number, password, income, expense, balance)
+	VALUES ('$name', '$email', '$income_range', '$bank_name', '$account_number', '$password', 0, 0, 0)";
 
     if ($conn->query($sql) === TRUE) {
         ?><div class="alert success">

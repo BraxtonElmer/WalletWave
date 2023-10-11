@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check whether the input is an email or a username
     if (filter_var($Email, FILTER_VALIDATE_EMAIL)) {
         // If it's an email, query the database using email
-        $query = "SELECT id, name, password FROM users WHERE email='$Email'";
+        $query = "SELECT id, name, password, income, expense FROM users WHERE email='$Email'";
     }
 
     $result = $conn->query($query);
@@ -21,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row["password"])) {
             // Password is correct, set session variables and redirect to welcome page
             $_SESSION["user_id"] = $row["id"];
-            $_SESSION["username"] = $row["username"];
-            header("Location: welcome.php"); // Redirect to the welcome page after successful login
+            $_SESSION["username"] = $row["name"];
+            $_SESSION["income"] = $row["income"];
+            $_SESSION["expense"] = $row["expense"];
+            header("Location: dashboard"); // Redirect to the welcome page after successful login
         } else {
             // Password is incorrect, display error message
             $loginError = "Invalid password. Please try again.";
