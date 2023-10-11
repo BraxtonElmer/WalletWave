@@ -4,7 +4,7 @@ WalletWave is a financial management website, which is used to track your income
 
 # STEPS TO RUN THE CODE
 
-Download (XAMPP)[https://www.apachefriends.org/download.html] or any other Apache provider<br>
+Download [XAMPP](https://www.apachefriends.org/download.html) or any other Apache provider<br>
 Make sure you install php and mysql<br>
 drop the repo files in ```C://XAMPP/htdocs/``` (or any other place you installed)<br>
 open XAMPP, select start apache and start mysql.<br>
