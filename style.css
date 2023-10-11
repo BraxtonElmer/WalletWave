@@ -77,3 +77,34 @@
 
 	cursor: pointer;
 }
+.tools{
+	background: beige;
+	color:blue;
+	font-size:15px;
+	border-width:0px;
+	transition: 0.3s;
+}
+.tools:hover{
+	cursor:pointer;
+	background: navy;
+	color:white;
+	border-radius:10px;
+}
+.amountent{
+	border:1px solid black;
+	font-size:30px;
+	font-family: Calibri;
+}
+.addtrans{
+	color:white;
+	border-radius:12px;
+	background: darkgreen;
+	transition: 0.3s;
+}
+.addtrans:hover{
+	cursor:pointer;
+	background: navy;
+	letter-spacing:1.1px;
+	transition: 0.3s;
+	-webkit-box-reflect:below 2px linear-gradient(transparent,transparent,blue);
+}
