@@ -57,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	VALUES ('$name', '$email', '$income_range', '$bank_name', '$account_number', '$password', 0, 0, 0)";
 
     if ($conn->query($sql) === TRUE) {
+		// $sql = "INSERT INTO transactions (user_email) VALUES ('$email')";
+		// $conn->query($sql);		
         ?><div class="alert success">
 		<span class="closebtn">&times;</span>  
 		<strong>Success!</strong> Account Created Successfully.

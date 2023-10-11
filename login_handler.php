@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["username"] = $row["name"];
             $_SESSION["income"] = $row["income"];
             $_SESSION["expense"] = $row["expense"];
+            $_SESSION["email"] = $Email;
             header("Location: dashboard"); // Redirect to the welcome page after successful login
         } else {
             // Password is incorrect, display error message

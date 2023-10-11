@@ -70,7 +70,7 @@
 		<tr>
 			<td style='width:75%;'>
 				<div style='width:100%;max-height:60vh;'>
-					<table style='width:100%;border-collapse: collapse;'>
+					<!-- <table style='width:100%;border-collapse: collapse;'>
 						<tr>
 							<th style='width:25%;'><center>Income/Expense</center></th>
 							<th style='width:25%;'><center>Amount</center></th>
@@ -89,24 +89,70 @@
 							<td class='amountent' style='width:25%;color:red;'><center>2023-10-12</center></td>
 							<td class='amountent' style='width:25%;color:red;'><center>Indian Bank</center></td>
 						</tr>
-					</table>
+					</table> -->
+
+					<?php
+					session_start();
+					
+					require 'sql.php';
+					
+					// Fetch transactions data from the database
+					$userEmail = $_SESSION["email"];
+					$sql = "SELECT * FROM transactions WHERE user_email='$userEmail'";
+					$result = $conn->query($sql);
+					
+					if ($result->num_rows > 0) {
+						echo "<table style='width:100%;border-collapse: collapse;'>
+								<tr>
+									<th style='width:25%;'><center>Income/Expense</center></th>
+									<th style='width:25%;'><center>Amount</center></th>
+									<th style='width:25%;'><center>Date of Transfer</center></th>
+									<th style='width:25%;'><center>Account</center></th>
+								</tr>";
+					
+						// Output data of each row
+						while($row = $result->fetch_assoc()) {
+							$transactionType = $row["transaction_type"];
+							$amount = number_format($row["amount"]); // Format amount with comma
+							$date = $row["transaction_date"];
+							$bankAccount = $row["bank_account"];
+					
+							// Set text color based on transaction type
+							$textColor = ($transactionType == 'Expense') ? 'red' : 'green';
+					
+							echo "<tr>
+									<td class='amountent' style='width:25%;color:$textColor;'><center>$transactionType</center></td>
+									<td class='amountent' style='width:25%;color:$textColor;'><center>$amount</center></td>
+									<td class='amountent' style='width:25%;color:$textColor;'><center>$date</center></td>
+									<td class='amountent' style='width:25%;color:$textColor;'><center>$bankAccount</center></td>
+								  </tr>";
+						}
+						echo "</table>";
+					} else {
+						echo "<center class='amountent'>No transactions found.</center>";
+					}
+					
+					$conn->close();
+					?>
+					
 
 				</div>
 			</td>
 			<td style='width:25%;'>
 				<div style='width:100%;'>
 					<center><h1>Add Entry</h1></center>
-					<center><select class='entries' style='width:80%;'>
+					<form id="transactionForm" method="POST" action="add_transaction.php">
+					<center><select class='entries' style='width:80%;' name="transactionType">
 						<option value='default'>--Select Type Of Transfer--</option>
 						<option id='income'>Income</option>
 						<option id='expense'>Expense</option>
 					</select></center>
 					<br>
-					<center><input type='number' class='entries' style='width:80%;' placeholder="Enter Amount"></center>
+					<center><input type='number' name='amount' class='entries' style='width:80%;' placeholder="Enter Amount"></center>
 					<br>
-					<center><input onfocusout="(this.type='text')" onfocus="(this.type='date')" class='entries' placeholder="Date of transfer" style='width:80%;'></center>
+					<center><input onfocusout="(this.type='text')" name='transactionDate' onfocus="(this.type='date')" class='entries' placeholder="Date of transfer" style='width:80%;'></center>
 					<br>
-					<center><select id='banks' class='entries'>
+					<center><select id='banks' class='entries' name='bankAccount'>
 						<option value="default">--Select Bank Account--</option>
 						<option id='ib'>Indian Bank</option>
 						<option id='sbi'>State Bank of India</option>
@@ -118,10 +164,13 @@
 
 					</select></center>
 					<br>
-					<center><button id='addtrans' class='addtrans' style='font-size:20px;height:50px;'><span class="fa fa-solid fa-plus"></span>Add Transaction</button>
+					<center><button id='addtrans' class='addtrans' style='font-size:20px;height:50px;' type="submit"><span class="fa fa-solid fa-plus"></span>Add Transaction</button>
+					</form>
+					<div id="transactionHistory"></div>
+					</center>
+
 
 			</td>
 		</tr>
-
 </body>
 </html>
