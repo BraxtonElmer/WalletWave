@@ -36,10 +36,10 @@ import the walletwave.sql file in the main folder.
     income VARCHAR(50) DEFAULT '0',
     expense VARCHAR(50) DEFAULT '0',
     balance VARCHAR(50) DEFAULT '0'
-);```
+);
 
 
-```CREATE TABLE transactions (
+CREATE TABLE transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_email VARCHAR(255),
     transaction_type VARCHAR(50),
@@ -50,7 +50,7 @@ import the walletwave.sql file in the main folder.
 
 
 
-```CREATE TABLE reminder (
+CREATE TABLE reminder (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_email VARCHAR(255),
     category VARCHAR(255),
