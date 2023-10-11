@@ -40,13 +40,15 @@
 				<img src='assets/cashfall.jpg' style='width:100%;height:15%;object-fit: cover;border-radius:15px 15px 0 0;'>
 				<br>
 				<center><h1>Login</h1></center>
-				<center><input type='text' id='username' class='entries' placeholder="Enter Username (or E-Mail ID)"></center>
+				<form action="login_handler.php" method="POST">
+				<center><input type='text' id='username' class='entries' placeholder="Enter E-mail ID" name="username"></center>
 				<br><br>
-				<center><input style='margin-left:32px;' type='password' class='entries' id='passwd' placeholder="Enter Password">
+				<center><input style='margin-left:32px;' type='password' class='entries' id='passwd' placeholder="Enter Password" name="password">
 					<button id='see' style='margin-left:8px;' class='see'><span class="fa fa-solid fa-eye"></span></button>
 				</center>
 				<br><br><br>
-				<center><button class='login'>CONFIRM</button></center>
+				<center><button class='login' type="submit">CONFIRM</button></center>
+				</form>
 				<center><h5>Don't have an account ? | <a href='register'>Register Now</a></h5></center>
 
 
