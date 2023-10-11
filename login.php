@@ -26,7 +26,7 @@
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs'>Register</button></center>
+				<center><a href="register"><button class='navs'>Register</button></a></center>
 			</td>
 
 		</tr>
@@ -36,18 +36,18 @@
 	</table>
 	<br><br><br><br>
 	<center>
-			<div style='border-radius:15px;width:40%;height:60vh;box-shadow:2px 2px 10px 0.08px;'>
+			<div style='border-radius:15px;width:40%;height:60vh;box-shadow:2px 2px 10px 0.08px;background-color:white;'>
 				<img src='assets/cashfall.jpg' style='width:100%;height:15%;object-fit: cover;border-radius:15px 15px 0 0;'>
 				<br>
 				<center><h1>Login</h1></center>
-				<center><input type='text' id='username' class='entries' placeholder="Enter Username (or GMail ID)"></center>
+				<center><input type='text' id='username' class='entries' placeholder="Enter Username (or E-Mail ID)"></center>
 				<br><br>
 				<center><input style='margin-left:32px;' type='password' class='entries' id='passwd' placeholder="Enter Password">
 					<button id='see' style='margin-left:8px;' class='see'><span class="fa fa-solid fa-eye"></span></button>
 				</center>
 				<br><br><br>
 				<center><button class='login'>CONFIRM</button></center>
-				<center><h5>Don't have an account ? | <a href='register.html'>Register Now</a></h5></center>
+				<center><h5>Don't have an account ? | <a href='register'>Register Now</a></h5></center>
 
 
 
