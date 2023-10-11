@@ -65,6 +65,6 @@ CREATE TABLE reminder (
 
 
 # CONTRIBUTORS
-Braxton Elmer A
-Vishwaa R
-Vikraman SP
+Braxton Elmer A<br>
+Vishwaa R<br>
+Vikraman SP<br>
