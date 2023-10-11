@@ -25,7 +25,8 @@ import the walletwave.sql file in the main folder.
 
 ```CREATE DATABASE walletwave;```
 
-```CREATE TABLE users (
+```
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     email VARCHAR(255),
