@@ -61,3 +61,10 @@ CREATE TABLE reminder (
     description VARCHAR(255),
     datelas VARCHAR(255)
 );
+```
+
+
+# CONTRIBUTORS
+Braxton Elmer A
+Vishwaa R
+Vikraman SP
