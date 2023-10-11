@@ -7,20 +7,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["email"])) {
     $amount = $_POST["amount"];
     $date = $_POST["transactionDate"];
     $bankAccount = $_POST["bankAccount"];
-    $Email=$_SESSION["email"];
+    $userEmail = $_SESSION["email"];
 
-    // Insert transaction into the database
-    $sql = "INSERT INTO transactions (transaction_type, amount, transaction_date, bank_account, user_email)
-            VALUES ('$transactionType', '$amount', '$date', '$bankAccount', '$Email')";
+    // Insert transaction into the transactions table
+    $transactionSql = "INSERT INTO transactions (transaction_type, amount, transaction_date, bank_account, user_email)
+            VALUES ('$transactionType', '$amount', '$date', '$bankAccount', '$userEmail')";
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: history");
+    if ($conn->query($transactionSql) === TRUE) {
+        // Update user's expense or income based on the transaction type
+        $userSql = "";
+        if ($transactionType == "Expense") {
+            $userSql = "UPDATE users SET expense = expense + $amount WHERE email = '$userEmail'";
+        } elseif ($transactionType == "Income") {
+            $userSql = "UPDATE users SET income = income + $amount WHERE email = '$userEmail'";
+        }
+
+        if ($conn->query($userSql) === TRUE) {
+            header("Location: history");
+        } else {
+            echo "Error updating user's data: " . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error adding transaction: " . $conn->error;
     }
 
     // Retrieve and display transaction history
-    $historySql = "SELECT * FROM transactions WHERE user_id='$userId'";
+    $historySql = "SELECT * FROM transactions WHERE user_email='$userEmail'";
     $result = $conn->query($historySql);
 
     if ($result->num_rows > 0) {

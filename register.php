@@ -85,7 +85,7 @@ $conn->close();
 			</td>
 			<td style='width:49%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs'>About Us</button></center>
+				<center><a href='about'><button class='navs'>About Us</button></a></center>
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
@@ -214,7 +214,6 @@ $conn->close();
 									</select>
 									<br><br>
 									<input type='text' class='entries' placeholder="Enter Account No." name="account_number">
-									<button style='height:40px;width:40px;' class='proceed' id='add' onclick=(function(){event.preventDefault();})><span class="fa fa-solid fa-plus"></span></button>
 									<button style='height:40px;width:40px;' class='proceed' id='step4'><span class="fa fa-solid fa-right-long"></span></button>
 								</center>
 								<br>

@@ -30,11 +30,11 @@
 			</td>
 			<td style='width:49%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs'>About Us</button></center>
+				<center><a href='about'><button class='navs'>About Us</button></a></center>
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs' style='width:auto;border-radius:50%;'><span class="fa fa-solid fa-user"></span></button></center>
+				<center><a href='dashboard'><button class='navs' style='width:auto;border-radius:50%;'><span class="fa fa-solid fa-user"></span></button></a></center>
 			</td>
 
 		</tr>
@@ -53,12 +53,12 @@
 			</td>
 			<td style='width:10%;'>
 				<center>
-					<button class='tools' style="height:38px;"><span style='color:red;' class="fa fa-solid fa-home"></span>  Home </button>
+					<a href='dashboard'><button class='tools' style="height:38px;"><span style='color:red;' class="fa fa-solid fa-home"></span>  Home </button></a>
 				</center>
 			</td>
 			<td style='width:10%;'>
 				<center>
-					<button class='tools'><span style='color:#fcca03;' class="fa fa-solid fa-bell"></span>  Remind Bill Payments </button>
+					<a href='reminder'><button class='tools'><span style='color:#fcca03;' class="fa fa-solid fa-bell"></span>  Remind Bill Payments </button></a>
 				</center></td>
 			
 			
