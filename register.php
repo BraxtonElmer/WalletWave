@@ -95,7 +95,7 @@ $conn->close();
 
 	</table>
 	<br><br><br>
-	<form action="" method="POST">
+	<form action="" method="POST" onsubmit="return validateForm()">
 	<div style='height:61vh;width:99vw;overflow-y: hidden;border-radius:30px;border-collapse: collapse;border:1px dashed navy'>
 		<table style='width:100%;'>
 		<tr id='row1'>
@@ -212,7 +212,7 @@ $conn->close();
 									</select>
 									<br><br>
 									<input type='text' class='entries' placeholder="Enter Account No." name="account_number">
-									<button style='height:40px;width:40px;' class='proceed' id='add' onclick="(function(){event.preventDefault();})"><span class="fa fa-solid fa-plus"></span></button>
+									<button style='height:40px;width:40px;' class='proceed' id='add' onclick=(function(){event.preventDefault();})><span class="fa fa-solid fa-plus"></span></button>
 									<button style='height:40px;width:40px;' class='proceed' id='step4'><span class="fa fa-solid fa-right-long"></span></button>
 								</center>
 								<br>
@@ -272,6 +272,7 @@ $conn->close();
 									<input type='password' class='entries' id='passwd' placeholder="Enter Password" name="password">
 									<br><br>
 									<input type='password' class='entries' id='conpasswd' placeholder="Confirm Password">
+									<p id="passwordError" style="color: red;"></p>
 									<button style='height:40px;width:40px;' class='proceed' id='step5' type="submit"><span class="fa fa-solid fa-right-long"></span></button>
 </form>
 								</center>
@@ -319,11 +320,23 @@ $conn->close();
 		event.preventDefault();
 
 	}
-	// document.getElementById('step5').onclick=function(){
-	// 	//document.getElementById('row2').scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})
-	// 	alert('Success');
 
-	// }
+	function validateForm() {
+    var password = document.getElementById('passwd').value;
+    var confirmPassword = document.getElementById('conpasswd').value;
+    var passwordError = document.getElementById('passwordError');
+
+    if (password === confirmPassword && password !== "") {
+        // Passwords match and are not empty
+        passwordError.textContent = ""; // Clear any previous error message
+        return true; // Allow the form to be submitted
+    } else {
+        // Passwords do not match or are empty, display error message
+        passwordError.textContent = "Passwords do not match or cannot be empty. Please try again.";
+        return false; // Prevent the form from being submitted
+    }
+}
+
 	document.getElementById('btn').onclick=function(){
 		document.getElementById('btn').click();
 		document.getElementById('ib').remove();
