@@ -46,7 +46,7 @@ CREATE TABLE transactions (
     amount DECIMAL(10, 2),
     transaction_date DATE,
     bank_account VARCHAR(255)
-);```
+);
 
 
 
@@ -57,4 +57,4 @@ CREATE TABLE reminder (
     amount DECIMAL(10, 2),
     description VARCHAR(255),
     datelas VARCHAR(255)
-);```
+);
