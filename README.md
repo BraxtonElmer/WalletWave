@@ -1,8 +1,15 @@
 # WalletWave
-WalletWave is a financial management website, which is used to track your income / expenses.
+WalletWave is a financial management website, which is used to track your income / expenses with date, set reminders for bills, taxes due and so on.
 
+# Features
 
-# STEPS TO RUN THE CODE
+- Income Tracking with date
+- Expense Tracking with date
+- Set reminders for bill dues or other Payments.
+- View Balance available'
+- Actively plan and manage your expenses
+
+# Getting Started:
 
 Download [XAMPP](https://www.apachefriends.org/download.html) or any other Apache provider<br>
 Make sure you install php and mysql<br>
