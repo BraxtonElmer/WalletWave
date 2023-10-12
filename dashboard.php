@@ -7,8 +7,19 @@
 	<title>WalletWave | User Dashboard</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+        }
+        
+		</style>
 	<link rel='icon' type='image/x-icon' href='assets/logo.png'>
 	<link rel='stylesheet' type='text/css' href="style.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <style>
 	th{
@@ -118,6 +129,26 @@ $conn->close(); // Close the database connection
 		</tr>
 	</table>
 	<br><br>
+
+
+	
+	<div class="graphing">
+
+		<div class="flex-container">
+	
+		<div style="width: 80%; margin: auto;" class="chart-container">
+			<canvas id="income_expense"></canvas>
+		</div>
+
+		<div style="width: 80%; margin: auto;" class="chart-container">
+			<canvas id="savings_expense"></canvas>
+		</div>
+
+		</div>
+	</div>
+
+
+
 	<center>
 		<center><h1 style='font-family: Calibri;'>Payment Reminders</h1></center>
 		<div style='width:75%;max-height:50vh;'>
@@ -161,6 +192,68 @@ $remindersResult = $conn->query($remindersQuery);
 
 
 		</div></center>
+		<script>
+        var ctx = document.getElementById('income_expense').getContext('2d');
+        var Income = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Expenses', 'Income'],
+                datasets: [{
+                    data: [<?php echo $expense; ?>, <?php echo $income; ?>], // Sample data for expenses and income, replace this with your actual data
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)', // Red color for expenses
+                        'rgba(75, 192, 192, 0.7)' // Green color for income
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: 'Expense and Income Chart'
+                }
+            }
+        });
 
+        var ctx = document.getElementById('savings_expense').getContext('2d');
+        var savings = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Savings', 'Expense'],
+                datasets: [{
+                    data: [<?php echo (intval($income) - intval($expense)); ?>, <?php echo $expense; ?>], // Sample data for expenses and income, replace this with your actual data
+                    backgroundColor: [
+                        '#FCE53C', // color for savings
+                        '#FC6D4E' // color for expense
+                    ],
+                    borderColor: [
+                        '#DFC81A',
+                        '#E87E6A'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: 'Savings and Expence Chart'
+                }
+            }
+        });
+    </script>
 </body>
 </html>
