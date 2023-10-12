@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Password is incorrect, display error message
             $loginError = "Invalid password. Please try again.";
-            echo 'pass wrong';
+            header("Location: login?wrong=");
         }
     } else {
         // User not found, display error message
         $loginError = "User not found. Please check your username or email.";
-        echo 'not foumd';
+        header("Location: login?wrong=");
     }
 }
 else{

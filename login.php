@@ -8,8 +8,48 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
 	<link rel='icon' type='image/x-icon' href='assets/logo.png'>
 	<link rel='stylesheet' type='text/css' href="style.css">
+	<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+.alert.wrong {background-color: #e05c53;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+</head>
+<style>
+/*td{
+	border:1px solid black;
+}*/
+</style>
 </head>
 <body>
+	<?php if(isset($_GET['wrong'])){echo'<div class="alert wrong">
+		<span class="closebtn">&times;</span>  
+		The credentials do not match.
+	  </div>'; }?>
 	<table style='width:99vw;height:10vh;border-radius:10px;'>
 		<tr style='width:100%;'>
 			<td style='width:10%;'>
@@ -17,7 +57,7 @@
 
 			</td>
 			<td style='width:20%;'>
-				<h1 style='font-family:Calibri;'>Walletwave</h1>
+				<h1 style='font-family:Calibri;'>WalletWave</h1>
 
 			</td>
 			<td style='width:49%;'></td>
@@ -74,5 +114,18 @@
 		}
 	}
 
+</script>
+
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 </script>
 </html>

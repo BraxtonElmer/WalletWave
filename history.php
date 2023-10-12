@@ -21,11 +21,11 @@
 	<table style='width:99vw;height:10vh;border-radius:10px;'>
 		<tr style='width:100%;'>
 			<td style='width:10%;'>
-				<img style='width:60%;height:60%;float: right;' src='assets/logo.png'>
+			<a href="dashboard"><img style='width:60%;height:60%;float: right;' src='assets/logo.png'></a>
 
 			</td>
 			<td style='width:20%;'>
-				<h1 style='font-family:Calibri;'>Walletwave</h1>
+			<a href="dashboard" style="text-decoration:none; color:black;"><h1 style='font-family:Calibri;'>WalletWave</h1></a>
 
 			</td>
 			<td style='width:49%;'></td>

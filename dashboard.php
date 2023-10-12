@@ -26,7 +26,7 @@
 
 			</td>
 			<td style='width:20%;'>
-				<h1 style='font-family:Calibri;'>Walletwave</h1>
+				<h1 style='font-family:Calibri;'>WalletWave</h1>
 
 			</td>
 			<td style='width:49%;'></td>
