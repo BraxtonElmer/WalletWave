@@ -1,13 +1,21 @@
+
+@font-face{
+	font-family:Comfortaa;
+	src:url('assets/comfortaa.ttf');
+}
+body{
+	font-family: Comfortaa;
+}
 .navs{
 	background: #0e664e;
 	border-radius:10px;
 	border-width:0px;
 	color:white;
-	font-family: Calibri;
+	font-family: Comfortaa;
 	transition:0.3s;
 	font-size:18px;
 	width:90%;
-	height:30px;
+	height:40px;
 }
 .navs:hover{
 	cursor:pointer;
@@ -93,13 +101,14 @@
 .amountent{
 	border:1px solid black;
 	font-size:30px;
-	font-family: Calibri;
+	font-family: Comfortaa;
 }
 .addtrans{
 	color:white;
 	border-radius:12px;
 	background: darkgreen;
 	transition: 0.3s;
+	font-family:Comfortaa;
 }
 .addtrans:hover{
 	cursor:pointer;
@@ -107,4 +116,22 @@
 	letter-spacing:1.1px;
 	transition: 0.3s;
 	-webkit-box-reflect:below 2px linear-gradient(transparent,transparent,blue);
+}
+.addloan{
+	background: red;
+	color:white;
+	font-family:Comfortaa;
+	font-size:20px;
+	text-decoration:none;
+	transition:0.3s;
+	border-radius:15px;
+	border-width:0px;
+	height:50px;
+	width:80%;
+
+}
+.addloan:hover{
+	cursor:pointer;
+	text-decoration:underline;
+	box-shadow:inset 20px 0px 0px 0px green,inset -20px 0px 0px 0px green;
 }
