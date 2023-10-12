@@ -1,10 +1,33 @@
 # WalletWave
 WalletWave is a financial management website, which is used to track your income / expenses.
 
-# SQL CONFIGURATIONS:
 
+# STEPS TO RUN THE CODE
+
+Download [XAMPP](https://www.apachefriends.org/download.html) or any other Apache provider<br>
+Make sure you install php and mysql<br>
+drop the repo files in ```C://XAMPP/htdocs/``` (or any other place you installed)<br>
+open XAMPP, select start apache and start mysql.<br>
+type `localhost` in browser.<br>
+NOTE: DO SQL CONFIG FOR THE PHP TO WORK<br>
+open `localhost/phpmyadmin` in a browser.<br>
+and follow the below steps:
+
+## AUTOMATIC SQL CONFIG:
+
+Open SQL Command interface in phpmyadmin
+
+```CREATE DATABASE `walletwave`;```
+
+import the walletwave.sql file in the main folder.
+
+## MANUAL SQL CONFIGURATIONS:
+
+```
 CREATE DATABASE walletwave;
+```
 
+```
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
@@ -38,3 +61,10 @@ CREATE TABLE reminder (
     description VARCHAR(255),
     datelas VARCHAR(255)
 );
+```
+
+
+# CONTRIBUTORS
+Braxton Elmer A<br>
+Vishwaa R<br>
+Vikraman SP<br>
