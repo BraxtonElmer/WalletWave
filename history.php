@@ -34,7 +34,7 @@
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
-				<center><a href='dashboard'><button class='navs' style='width:auto;border-radius:50%;'><span class="fa fa-solid fa-user"></span></button></a></center>
+				<center><a href='logout'><button class='navs' style='width:auto;border-radius:10px'><span class="fa fa-solid fa-user"></span> Logout</button></a></center>
 			</td>
 
 		</tr>

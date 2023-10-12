@@ -35,7 +35,7 @@
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
-				<center><a href="dashboard"><button class='navs' style='width:auto;border-radius:50%;'><span class="fa fa-solid fa-user"></span></button></a></center>
+				<center><a href="logout"><button class='navs' style='width:auto;border-radius:10px;'><span class="fa fa-solid fa-user"></span> Logout</button></a></center>
 			</td>
 
 		</tr>
@@ -94,7 +94,7 @@ if ($userResult->num_rows > 0) {
         echo "<br>";
         echo "<center><h1 style='color:green;'>Income: Rs.<span id='inc'>$income</span></h1></center>";
         echo "<center><h1 style='color:red;'>Expenses: Rs.<span id='inc'>$expense</span></h1></center>";
-        echo "<center><h1 style='color:navy;'>Balance: Rs.<span id='inc'>" . (intval($income) - intval($expense)) . "</span></h1></center>";
+        echo "<center><h1 style='color:navy;'>Savings: Rs.<span id='inc'>" . (intval($income) - intval($expense)) . "</span></h1></center>";
         echo "<br>";
         echo "<center><a href='history'><button class='navs' style='width:auto;'> <span class='fa fa-solid fa-pencil'></span>Edit History</button></a></center>";
     }

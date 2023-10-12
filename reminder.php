@@ -30,11 +30,11 @@
 			</td>
 			<td style='width:49%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs'>About Us</button></center>
+				<center><a href="about"><button class='navs'>About Us</button></a></center>
 			</td>
 			<td style='width:7%;'></td>
 			<td style='width:7%;'>
-				<center><button class='navs' style='width:auto;border-radius:50%;'><span class="fa fa-solid fa-user"></span></button></center>
+				<center><a href="logout"><button class='navs' style='width:auto;border-radius:10px;'><span class="fa fa-solid fa-user"></span> Logout</button></a></center>
 			</td>
 
 		</tr>
