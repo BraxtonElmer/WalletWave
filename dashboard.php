@@ -100,7 +100,7 @@ if ($userResult->num_rows > 0) {
         $username = $_SESSION["username"];
         $income = $row["income"];
         $expense = $row["expense"];
-
+		echo "<br>";
         echo "<center><h1 style='color:#0e664e;'>Hi, <span id='name'>$username</span></h1></center>";
         echo "<br>";
         echo "<center><h1 style='color:green;'>Income: Rs.<span id='inc'>$income</span></h1></center>";
