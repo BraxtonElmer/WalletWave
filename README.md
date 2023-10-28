@@ -1,3 +1,5 @@
+This is a project which me and my teamates did for a Hackathon from scratch in a few hours.
+
 # WalletWave
 WalletWave is a financial management website, which is used to track your income / expenses with date, set reminders for bills, taxes due and so on.
 
